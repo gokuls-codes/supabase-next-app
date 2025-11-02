@@ -147,7 +147,7 @@ const PingDisplay = () => {
       const newBuzz: IncomingBuzz = {
         key: payload.payload.user.key,
         username: payload.payload.user.name,
-        buzzedAt: new Date(payload.payload.sentAt),
+        buzzedAt: new Date(),
       };
       console.log("New buzz:", newBuzz);
       setIncomingBuzzes((current) => [...current, newBuzz]);

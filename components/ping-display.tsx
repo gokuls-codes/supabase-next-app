@@ -135,7 +135,9 @@ const PingDisplay = () => {
           setIsBuzzDisabled(false);
         }
         if (payload.payload.action === "enable-buzz") {
-          setBuzzEnabledAt(new Date());
+          setBuzzEnabledAt(
+            payload.payload.sentAt ? new Date(payload.payload.sentAt) : null
+          );
           setIsBuzzActive(true);
         }
       }
@@ -226,7 +228,7 @@ const PingDisplay = () => {
   return (
     <div className="  p-4 rounded-md space-y-8 w-full max-w-sm mx-auto">
       <h2 className=" text-xl font-semibold text-center">
-        {roomId}&apos;s-Room
+        {roomId ? `${roomId}'s Room` : "Create a Room"}
       </h2>
       {!submittedUserName ? (
         <div className=" flex flex-col gap-4">

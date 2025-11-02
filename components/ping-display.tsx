@@ -328,7 +328,11 @@ const PingDisplay = () => {
                 {incomingBuzzes.map((buzz, index) => (
                   <li key={index}>
                     {buzz.username}{" "}
-                    {buzz.buzzedAt.getTime() - buzzEnabledAt?.getTime()} ms
+                    {roomId === submittedUserName && (
+                      <span>
+                        {buzz.buzzedAt.getTime() - buzzEnabledAt?.getTime()} ms
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>

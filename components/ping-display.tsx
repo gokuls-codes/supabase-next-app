@@ -322,6 +322,7 @@ const PingDisplay = () => {
 
           {buzzEnabledAt && (
             <div className="">
+              <p>Enabled at: {buzzEnabledAt.toISOString()}</p>
               {incomingBuzzes.length > 0 && <h3>Incoming Buzzes:</h3>}
               <ul>
                 {incomingBuzzes.map((buzz, index) => (

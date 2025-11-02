@@ -1,10 +1,12 @@
 import PingDisplay from "@/components/ping-display";
-import React from "react";
+import React, { Suspense } from "react";
 
 const BuzzerPage = () => {
   return (
-    <div className=" w-screen h-screen grid place-items-center">
-      <PingDisplay />
+    <div className="">
+      <Suspense fallback={<div>Loading...</div>}>
+        <PingDisplay />
+      </Suspense>
     </div>
   );
 };

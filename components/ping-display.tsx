@@ -131,6 +131,7 @@ const PingDisplay = () => {
         console.log("Received action:", payload);
         if (payload.payload.action === "reset-buzz") {
           setIncomingBuzzes([]);
+          setBuzzEnabledAt(null);
           setIsBuzzActive(false);
           setIsBuzzDisabled(false);
         }
